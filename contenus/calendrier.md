@@ -16,15 +16,22 @@ URL cible : `/calendrier/`
    page de chaque équipe (résultats, calendrier, classement de sa compétition)
    et copier son adresse.
 2. Dans WordPress : *Personnaliser > Page d'accueil > Équipes et liens FFHB*.
-3. Saisir **une équipe par ligne**, au format :
+3. Saisir **une équipe par ligne**, au format `Nom | URL`. Les 7 équipes de la
+   saison 2026-2027 sont **déjà préremplies** dans le thème :
 
 ```
-Séniors M1 | https://www.ffhandball.com/...
-Séniors F1 | https://www.ffhandball.com/...
--13 ans (entente Mehun / Foëcy) | https://www.ffhandball.com/...
--11 ans (entente) | https://www.ffhandball.com/...
-Loisirs | https://www.ffhandball.com/...
+EDM – Seniors M (départemental) | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/championnat-seniors-m-26-27-32905/
+EDF – Seniors F (1ʳᵉ div. territoriale 16 F) | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/1ere-division-territoriale-16-feminine-32962/
+R3M – Honneur régional M | https://www.ffhandball.fr/competitions/saison-2026-2027-22/regional/honneur-regional-masculin-26-27-32351/
+PNF – Pré-Nationale F | https://www.ffhandball.fr/competitions/saison-2026-2027-22/regional/prenationale-feminine-26-27-32353/
+U11 M | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-18-championnat-u11-mixte-2026-2027-33753/poule-200733/
+U11 F | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-18-championnat-u11-mixte-2026-2027-33753/poule-200740/
+U15 M | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-championnat-u15m-2026-2027-33681/
 ```
+
+> 💡 À chaque changement de saison, remplacer l'année dans les URLs
+> (ex. `saison-2026-2027-22` → `saison-2027-2028-23`) et vérifier les identifiants
+> de compétition sur ffhandball.fr.
 
 La section « Résultats & classements » de la **page d'accueil** affiche
 automatiquement une tuile cliquable par équipe. Le lien vers une équipe est

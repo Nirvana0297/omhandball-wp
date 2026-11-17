@@ -74,13 +74,13 @@ function omhb_personnaliser( $wp_customize ) {
 	}
 
 	$wp_customize->add_setting( 'omhb_equipes_ffhb', array(
-		'default'           => '',
+		'default'           => omhb_equipes_ffhb_defaut(),
 		'sanitize_callback' => 'omhb_sanitize_equipes_ffhb',
 	) );
 
 	$wp_customize->add_control( 'omhb_equipes_ffhb', array(
 		'label'       => __( 'Équipes et liens FFHB (résultats & classements)', 'omhb' ),
-		'description' => __( "Une équipe par ligne, au format : Nom de l'équipe | URL de sa page FFHB. Exemple : Séniors M1 | https://www.ffhandball.com/... Les équipes en entente avec d'autres clubs ont donc chacune leur propre lien. Laissez vide pour masquer la section de la page d'accueil.", 'omhb' ),
+		'description' => __( "Une équipe par ligne, au format : Nom de l'équipe | URL de sa page FFHB. Exemple : EDM | https://www.ffhandball.fr/... Les équipes en entente avec d'autres clubs ont chacune leur propre lien. Les 7 équipes de la saison 2026-2027 sont déjà préremplies ; videz le champ pour masquer la section de la page d'accueil.", 'omhb' ),
 		'section'     => 'omhb_accueil',
 		'type'        => 'textarea',
 	) );

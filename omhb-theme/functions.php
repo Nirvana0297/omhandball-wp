@@ -219,12 +219,29 @@ function omhb_sanitize_equipes_ffhb( $valeur ) {
 }
 
 /**
+ * Liste par défaut des équipes et de leurs pages FFHB (saison 2026-2027).
+ *
+ * @return string Lignes au format « Nom | URL ».
+ */
+function omhb_equipes_ffhb_defaut() {
+	return implode( "\n", array(
+		'EDM – Seniors M (départemental) | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/championnat-seniors-m-26-27-32905/',
+		'EDF – Seniors F (1ʳᵉ div. territoriale 16 F) | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/1ere-division-territoriale-16-feminine-32962/',
+		'R3M – Honneur régional M | https://www.ffhandball.fr/competitions/saison-2026-2027-22/regional/honneur-regional-masculin-26-27-32351/',
+		'PNF – Pré-Nationale F | https://www.ffhandball.fr/competitions/saison-2026-2027-22/regional/prenationale-feminine-26-27-32353/',
+		'U11 M | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-18-championnat-u11-mixte-2026-2027-33753/poule-200733/',
+		'U11 F | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-18-championnat-u11-mixte-2026-2027-33753/poule-200740/',
+		'U15 M | https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-championnat-u15m-2026-2027-33681/',
+	) );
+}
+
+/**
  * Retourne la liste des équipes saisies dans le Customizer.
  *
  * @return array[] Tableau de tableaux : nom (string), url (string, vide possible).
  */
 function omhb_equipes_ffhb_liste() {
-	$omhb_brut   = (string) get_theme_mod( 'omhb_equipes_ffhb', '' );
+	$omhb_brut   = (string) get_theme_mod( 'omhb_equipes_ffhb', omhb_equipes_ffhb_defaut() );
 	$omhb_lignes = explode( "\n", $omhb_brut );
 	$omhb_liste  = array();
 	foreach ( $omhb_lignes as $omhb_ligne ) {
