@@ -93,8 +93,8 @@ if ( $omhb_hero_image_id ) {
 			</a>
 			<a class="omhb-acces-carte" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 				<div class="omhb-acces-icone">📍</div>
-				<h2 class="omhb-acces-titre"><?php esc_html_e( 'Contact', 'omhb' ); ?></h2>
-				<p><?php esc_html_e( 'Une question, envie de nous rejoindre ? Écrivez-nous ou venez au gymnase.', 'omhb' ); ?></p>
+				<h2 class="omhb-acces-titre"><?php esc_html_e( 'Contacts & accès', 'omhb' ); ?></h2>
+				<p><?php esc_html_e( 'Le bureau (présidente, secrétaire, trésorière), le gymnase, le téléphone et le formulaire : tous les moyens de nous joindre.', 'omhb' ); ?></p>
 			</a>
 		</div>
 	</div>
@@ -132,16 +132,18 @@ if ( $omhb_hero_image_id ) {
 	</div>
 </section>
 
+<?php if ( omhb_equipes_ffhb_liste() ) : ?>
 <section class="omhb-section" id="omhb-matchs">
 	<div class="omhb-conteneur">
 		<div class="omhb-section-entete">
-			<h2 class="omhb-section-titre"><?php esc_html_e( 'Résultats & prochains matchs', 'omhb' ); ?></h2>
-			<?php $omhb_scorenco = get_theme_mod( 'omhb_scorenco_url', 'https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2' ); ?>
-			<a class="omhb-section-lien" href="<?php echo esc_url( $omhb_scorenco ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Tout le calendrier →', 'omhb' ); ?></a>
+			<h2 class="omhb-section-titre"><?php esc_html_e( 'Résultats & classements', 'omhb' ); ?></h2>
+			<a class="omhb-section-lien" href="<?php echo esc_url( home_url( '/calendrier/' ) ); ?>"><?php esc_html_e( 'Page Calendrier →', 'omhb' ); ?></a>
 		</div>
-		<?php echo do_shortcode( '[omhb_scorenco]' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+		<p class="omhb-section-texte"><?php esc_html_e( 'Suivez chaque équipe du club (y compris les équipes en entente) directement sur les pages officielles de la FFHB.', 'omhb' ); ?></p>
+		<?php echo omhb_equipes_ffhb_html(); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	</div>
 </section>
+<?php endif; ?>
 
 <section class="omhb-cta">
 	<div class="omhb-conteneur">

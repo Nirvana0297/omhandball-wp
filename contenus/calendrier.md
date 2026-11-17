@@ -4,60 +4,44 @@ URL cible : `/calendrier/`
 
 ---
 
-## Module officiel : Score'n'co (partenaire FFHB)
+## Résultats et classements : liens vers les pages FFHB
 
-Les résultats et calendriers de la FFHB sont diffusés par **Score'n'co**. Le
-club y est référencé :
-https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2
+> Score'n'co n'a pas été retenu : les équipes du club jouant en **entente avec
+> d'autres clubs** n'y sont pas toutes remontées. À la place, chaque équipe
+> pointe vers **sa propre page officielle FFHB**.
 
-### Méthode recommandée (le plus simple)
+### Configuration (une seule fois)
 
-1. Se connecter à l'espace club sur **scorenco.com/admin** (compte « club »,
-   gratuit — demander l'accès si la page du club est déjà gérée).
-2. Aller dans **Widgets > Ajouter un widget** et choisir le type souhaité :
-   - **Matchs de la semaine** : tous les prochains matchs du club ;
-   - **Équipe(s)** : derniers résultats + prochains matchs d'une équipe ;
-   - **Classement** : le classement d'une compétition.
-3. Copier le **lien du widget** fourni (ou installer l'extension officielle
-   WordPress « Score'n'co Widget » et coller le code d'intégration).
-4. Deux façons de l'afficher :
-   - **Page d'accueil** : coller le lien dans
-     *Personnaliser > Page d'accueil > URL du widget Score'n'co* — la section
-     « Résultats & prochains matchs » s'affiche automatiquement ;
-   - **N'importe quelle page/article** : utiliser le shortcode du thème :
+1. Sur **ffhandball.com** (ou le site de la ligue / du district), ouvrir la
+   page de chaque équipe (résultats, calendrier, classement de sa compétition)
+   et copier son adresse.
+2. Dans WordPress : *Personnaliser > Page d'accueil > Équipes et liens FFHB*.
+3. Saisir **une équipe par ligne**, au format :
 
 ```
-[omhb_scorenco]
-[omhb_scorenco url="https://scorenco.com/..." hauteur="450"]
+Séniors M1 | https://www.ffhandball.com/...
+Séniors F1 | https://www.ffhandball.com/...
+-13 ans (entente Mehun / Foëcy) | https://www.ffhandball.com/...
+-11 ans (entente) | https://www.ffhandball.com/...
+Loisirs | https://www.ffhandball.com/...
 ```
 
-Les données (scores, calendriers, classements) se mettent à jour
-**automatiquement**, sans intervention.
+La section « Résultats & classements » de la **page d'accueil** affiche
+automatiquement une tuile cliquable par équipe. Le lien vers une équipe est
+facultatif (une ligne avec le nom seul crée une tuile sans lien).
+
+### Sur la page « Calendrier & résultats » et ailleurs
+
+Le shortcode du thème affiche la même grille n'importe où (page, article) :
+
+```
+[omhb_equipes_ffhb]
+```
+
+Pour ajouter des équipes sans modifier la liste globale, utiliser plutôt des
+liens classiques dans la page.
 
 ## Calendrier général
 
-Intégrer ici le calendrier général du club (widget Score'n'co ou Google
-Agenda, via un bloc « HTML personnalisé »).
-
-## Calendriers et résultats par équipe
-
-Pour chaque équipe (Seniors M1, Seniors F1, équipes jeunes…), créer un widget
-sur Score'n'co et l'insérer avec le shortcode :
-
-### Seniors masculins
-
-```
-[omhb_scorenco url="LIEN_DU_WIDGET_SENIORS_M" hauteur="500"]
-```
-
-### Seniors féminines
-
-```
-[omhb_scorenco url="LIEN_DU_WIDGET_SENIORS_F" hauteur="500"]
-```
-
-### Jeunes
-
-```
-[omhb_scorenco url="LIEN_DU_WIDGET_JEUNES" hauteur="500"]
-```
+Intégrer ici le calendrier général du club (Google Agenda, via un bloc
+« HTML personnalisé ») si besoin en complément des liens FFHB.

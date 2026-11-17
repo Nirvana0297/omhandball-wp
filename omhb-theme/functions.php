@@ -192,39 +192,88 @@ function omhb_icone_reseau( $reseau ) {
 }
 
 /**
- * Shortcode [omhb_scorenco] : affiche le widget Score'n'co (résultats, calendrier,
- * classements) créé depuis l'espace club scorenco.com/admin.
+ * Nettoie la liste « équipes / liens FFHB » saisie dans le Customizer
+ * (une équipe par ligne, format « Nom | URL »).
  *
- * Exemple : [omhb_scorenco hauteur="600"]
- *           [omhb_scorenco url="https://scorenco.com/..." hauteur="450"]
- *
- * @param array $atts Attributs du shortcode.
- * @return string HTML du widget.
+ * @param string $valeur Valeur brute.
+ * @return string Valeur nettoyée.
  */
-function omhb_shortcode_scorenco( $atts ) {
-	$atts = shortcode_atts(
-		array(
-			'url'     => get_theme_mod( 'omhb_scorenco_url', 'https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2' ),
-			'hauteur' => '620',
-		),
-		$atts,
-		'omhb_scorenco'
-	);
+function omhb_sanitize_equipes_ffhb( $valeur ) {
+	$omhb_lignes = explode( "\n", (string) $valeur );
+	$omhb_sortie = array();
+	foreach ( $omhb_lignes as $omhb_ligne ) {
+		$omhb_ligne = trim( $omhb_ligne );
+		if ( '' === $omhb_ligne ) {
+			continue;
+		}
+		$omhb_parts = array_map( 'trim', explode( '|', $omhb_ligne, 2 ) );
+		$omhb_nom   = isset( $omhb_parts[0] ) ? sanitize_text_field( $omhb_parts[0] ) : '';
+		$omhb_url   = isset( $omhb_parts[1] ) ? esc_url_raw( $omhb_parts[1] ) : '';
+		if ( $omhb_nom && $omhb_url ) {
+			$omhb_sortie[] = $omhb_nom . ' | ' . $omhb_url;
+		} elseif ( $omhb_nom ) {
+			$omhb_sortie[] = $omhb_nom;
+		}
+	}
+	return implode( "\n", $omhb_sortie );
+}
 
-	$omhb_url = esc_url_raw( $atts['url'] );
-	if ( ! $omhb_url ) {
+/**
+ * Retourne la liste des équipes saisies dans le Customizer.
+ *
+ * @return array[] Tableau de tableaux : nom (string), url (string, vide possible).
+ */
+function omhb_equipes_ffhb_liste() {
+	$omhb_brut   = (string) get_theme_mod( 'omhb_equipes_ffhb', '' );
+	$omhb_lignes = explode( "\n", $omhb_brut );
+	$omhb_liste  = array();
+	foreach ( $omhb_lignes as $omhb_ligne ) {
+		$omhb_ligne = trim( $omhb_ligne );
+		if ( '' === $omhb_ligne ) {
+			continue;
+		}
+		$omhb_parts    = array_map( 'trim', explode( '|', $omhb_ligne, 2 ) );
+		$omhb_liste[] = array(
+			'nom' => $omhb_parts[0],
+			'url' => isset( $omhb_parts[1] ) ? esc_url_raw( $omhb_parts[1] ) : '',
+		);
+	}
+	return $omhb_liste;
+}
+
+/**
+ * Affiche la grille des équipes avec liens vers les pages FFHB.
+ *
+ * @return string HTML de la grille (vide si aucune équipe configurée).
+ */
+function omhb_equipes_ffhb_html() {
+	$omhb_equipes = omhb_equipes_ffhb_liste();
+	if ( ! $omhb_equipes ) {
 		return '';
 	}
 
-	$omhb_hauteur = max( 200, absint( $atts['hauteur'] ) );
+	$omhb_liens = array();
+	foreach ( $omhb_equipes as $omhb_equipe ) {
+		$omhb_liens[] = sprintf(
+			'<a class="omhb-equipe-lien" href="%1$s"%2$s><span class="omhb-equipe-nom">%3$s</span><span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span></a>',
+			esc_url( $omhb_equipe['url'] ),
+			$omhb_equipe['url'] ? ' target="_blank" rel="noopener"' : '',
+			esc_html( $omhb_equipe['nom'] )
+		);
+	}
 
-	return sprintf(
-		'<div class="omhb-cadre-scorenco"><iframe src="%1$s" title="%2$s" loading="lazy" style="height:%3$dpx" referrerpolicy="no-referrer-when-downgrade"></iframe></div>',
-		esc_url( $omhb_url ),
-		esc_attr__( "Résultats et matchs de l'Olympique Mehun Handball (Score'n'co)", 'omhb' ),
-		$omhb_hauteur
-	);
+	return '<div class="omhb-grille-equipes">' . implode( "\n", $omhb_liens ) . '</div>';
 }
-add_shortcode( 'omhb_scorenco', 'omhb_shortcode_scorenco' );
+
+/**
+ * Shortcode [omhb_equipes_ffhb] : grille des équipes cliquables (pages FFHB)
+ * pour les pages « Calendrier & résultats », « Équipes »…
+ *
+ * @return string HTML de la grille.
+ */
+function omhb_shortcode_equipes_ffhb() {
+	return omhb_equipes_ffhb_html();
+}
+add_shortcode( 'omhb_equipes_ffhb', 'omhb_shortcode_equipes_ffhb' );
 
 require get_template_directory() . '/inc/customizer.php';

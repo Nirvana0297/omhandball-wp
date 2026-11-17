@@ -73,16 +73,16 @@ function omhb_personnaliser( $wp_customize ) {
 		) );
 	}
 
-	$wp_customize->add_setting( 'omhb_scorenco_url', array(
-		'default'           => 'https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2',
-		'sanitize_callback' => 'esc_url_raw',
+	$wp_customize->add_setting( 'omhb_equipes_ffhb', array(
+		'default'           => '',
+		'sanitize_callback' => 'omhb_sanitize_equipes_ffhb',
 	) );
 
-	$wp_customize->add_control( 'omhb_scorenco_url', array(
-		'label'       => __( "URL du widget Score'n'co (résultats & matchs)", 'omhb' ),
-		'description' => __( "Créez un widget « Matchs de la semaine » ou « Équipe » dans votre espace club scorenco.com/admin (rubrique Widgets), puis collez ici le lien fourni. Laissez vide pour masquer la section de la page d'accueil.", 'omhb' ),
+	$wp_customize->add_control( 'omhb_equipes_ffhb', array(
+		'label'       => __( 'Équipes et liens FFHB (résultats & classements)', 'omhb' ),
+		'description' => __( "Une équipe par ligne, au format : Nom de l'équipe | URL de sa page FFHB. Exemple : Séniors M1 | https://www.ffhandball.com/... Les équipes en entente avec d'autres clubs ont donc chacune leur propre lien. Laissez vide pour masquer la section de la page d'accueil.", 'omhb' ),
 		'section'     => 'omhb_accueil',
-		'type'        => 'url',
+		'type'        => 'textarea',
 	) );
 
 	$wp_customize->add_setting( 'omhb_hero_image', array(

@@ -18,7 +18,7 @@ hébergé chez LWS, avec un design moderne inspiré du nouveau logo du club.
 3. Installer le thème OMHB et les plugins
 4. Créer les pages et menus, régler le Customizer
 5. Migrer les articles Joomla avec le plugin FG Joomla to WordPress
-6. Intégrer le calendrier/résultats Score'n'co
+6. Configurer les liens FFHB de chaque équipe (résultats & classements)
 7. Basculer le domaine sur WordPress, rediriger les anciennes URLs, archiver Joomla
 
 Aucune étape n'interrompt le site actuel avant la bascule finale.
@@ -87,7 +87,7 @@ Vérifications immédiates dans **Réglages** :
 | WPForms Lite (ou Contact Form 7) | Formulaire de contact et pré-adhésion |
 | Rank Math SEO | Référencement, sitemap, balises |
 | UpdraftPlus | Sauvegardes automatiques (Google Drive ou autre) |
-| SportsPress (optionnel) | Calendriers et résultats si vous ne passez pas par Score'n'co |
+| SportsPress (optionnel) | Calendriers et résultats si vous préférez les saisir dans WordPress |
 
 Installer : **Extensions > Ajouter**, recherchez, installez, activez.
 
@@ -127,25 +127,28 @@ permaliens après création de chaque page.
 6. Si un article contient des codes courts ou balises propres à Joomla
    (`{loadposition}`…), nettoyez-les à la main dans l'éditeur.
 
-## Étape 7 — Calendrier et résultats (Score'n'co, partenaire FFHB)
+## Étape 7 — Résultats et classements (liens vers les pages FFHB)
 
-Les résultats FFHB sont diffusés par **Score'n'co**. Le club y est référencé :
-`https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2`
+> Les équipes jouant en **entente** avec d'autres clubs n'étant pas toutes
+> remontées par Score'n'co, le thème n'utilise pas ce service : chaque équipe
+> dispose de **son propre lien vers sa page officielle FFHB**.
 
-1. Connectez-vous à l'espace club **scorenco.com/admin** (compte gratuit ; si la
-   page du club est déjà gérée, demandez l'accès à Score'n'co).
-2. Créez un widget : **Matchs de la semaine**, **Équipe(s)** (derniers résultats
-   + prochains matchs) ou **Classement**, puis copiez le lien du widget.
-3. Deux affichages possibles :
-   - **Page d'accueil** : *Personnaliser > Page d'accueil > URL du widget
-     Score'n'co* — la section « Résultats & prochains matchs » s'affiche
-     automatiquement (laisser vide pour la masquer) ;
-   - **Page « Calendrier & résultats »** : shortcode du thème
-     `[omhb_scorenco url="https://scorenco.com/..." hauteur="500"]`.
-4. Alternative : installer l'extension officielle WordPress
-   **« Score'n'co Widget »** (Extensions > Ajouter) et coller le code
-   d'intégration dans un bloc **HTML personnalisé**.
-5. Les données se mettent à jour automatiquement, sans intervention.
+1. Sur **ffhandball.com** (ou les sites de la ligue / du district), ouvrez la
+   page de chaque équipe (calendrier, résultats, classement) et copiez son adresse.
+2. Dans WordPress : *Personnaliser > Page d'accueil > Équipes et liens FFHB*.
+3. Saisissez **une équipe par ligne**, au format :
+
+   ```
+   Séniors M1 | https://www.ffhandball.com/...
+   -13 ans (entente Mehun / Foëcy) | https://www.ffhandball.com/...
+   ```
+
+4. La section **« Résultats & classements »** de la page d'accueil affiche alors
+   automatiquement une tuile cliquable par équipe (laissez le champ vide pour la
+   masquer).
+5. Pour afficher la même grille sur la page « Calendrier & résultats » ou
+   ailleurs, utilisez le shortcode : `[omhb_equipes_ffhb]`.
+6. Pensez à mettre à jour les liens si les équipes changent de compétition.
 
 ## Étape 8 — Mise en production (bascule du domaine)
 
@@ -200,7 +203,7 @@ Une fois la bascule validée (quelques jours après) :
 - [ ] 7 pages créées avec les contenus fournis, tarifs à jour
 - [ ] Menu principal et menu pied de page en place
 - [ ] Articles Joomla migrés et relus
-- [ ] Calendrier Score'n'co intégré
+- [ ] Liens FFHB de chaque équipe configurés (y compris ententes)
 - [ ] Formulaire de contact testé
 - [ ] Bascule du domaine effectuée, redirections 301 en place
 - [ ] Sauvegardes automatiques planifiées

@@ -1,8 +1,16 @@
-# Page : Contact
+# Page : Contacts & accès
 
 URL cible : `/contact/`
 
 ---
+
+## Le bureau du club
+
+| Fonction | Nom |
+|---|---|
+| Présidente | Anne Brocadet |
+| Secrétaire | Pascal Gauthier |
+| Trésorière | Solène Meudic-Meunier |
 
 ## Olympique Mehun Handball
 

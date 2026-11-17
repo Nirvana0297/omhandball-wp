@@ -33,41 +33,42 @@
     font-weight: 600;
   }
   .omhb-hero { background-image: linear-gradient(100deg, rgba(94, 7, 10, 0.45) 25%, rgba(94, 7, 10, 0) 70%); }
-  /* Aperçu du widget Score'n'co (simulation) */
-  .demo-widget-entete {
-    padding: 12px 20px;
-    background: #fdf3f3;
-    color: var(--omhb-rouge);
-    font-size: 13px;
-    font-weight: 700;
-    border-bottom: 1px solid #f6e8e9;
+  /* Aperçu de la grille des équipes (liens FFHB) */
+  .omhb-section-texte {
+    color: var(--omhb-texte-clair);
+    margin: -8px 0 30px;
+    max-width: 720px;
   }
-  .demo-match {
+  .omhb-grille-equipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  .omhb-equipe-lien {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 20px;
-    border-bottom: 1px solid #f6e8e9;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--omhb-blanc);
+    border: 1.5px solid #f6e8e9;
+    border-left: 4px solid var(--omhb-rouge);
+    border-radius: var(--omhb-rayon);
+    box-shadow: var(--omhb-ombre);
+    padding: 22px 24px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .demo-match:last-child { border-bottom: 0; }
-  .demo-match .demo-meta { font-size: 13px; color: var(--omhb-texte-clair); }
-  .demo-match .demo-equipes { font-weight: 700; color: var(--omhb-anthracite); }
-  .demo-match .demo-score {
-    background: var(--omhb-rouge);
-    color: #fff;
+  .omhb-equipe-lien:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(204, 21, 23, 0.18);
+  }
+  .omhb-equipe-nom {
     font-weight: 800;
-    padding: 5px 14px;
-    border-radius: 8px;
-    white-space: nowrap;
+    font-size: 18px;
+    color: var(--omhb-anthracite);
   }
-  .demo-match .demo-a-venir {
-    border: 1.5px solid var(--omhb-rouge);
+  .omhb-equipe-suite {
+    font-size: 14px;
+    font-weight: 700;
     color: var(--omhb-rouge);
-    font-weight: 800;
-    padding: 4px 13px;
-    border-radius: 8px;
-    white-space: nowrap;
   }
 </style>
 </head>
@@ -107,7 +108,7 @@
         <li><a href="#omhb-acces">Adhésion</a></li>
         <li><a href="#omhb-acces">Calendrier</a></li>
         <li><a href="#omhb-acces">Sponsoring</a></li>
-        <li><a href="#omhb-acces">Contact</a></li>
+        <li><a href="#omhb-acces">Contacts</a></li>
       </ul>
     </nav>
   </div>
@@ -166,8 +167,8 @@
       </a>
       <a class="omhb-acces-carte" href="#omhb-acces">
         <div class="omhb-acces-icone">📍</div>
-        <h2 class="omhb-acces-titre">Contact</h2>
-        <p>Une question, envie de nous rejoindre ? Écrivez-nous ou venez au gymnase.</p>
+        <h2 class="omhb-acces-titre">Contacts &amp; accès</h2>
+        <p>Le bureau (présidente, secrétaire, trésorière), le gymnase, le téléphone et le formulaire : tous les moyens de nous joindre.</p>
       </a>
     </div>
   </div>
@@ -215,39 +216,31 @@
 <section class="omhb-section" id="omhb-matchs">
   <div class="omhb-conteneur">
     <div class="omhb-section-entete">
-      <h2 class="omhb-section-titre">Résultats &amp; prochains matchs</h2>
-      <a class="omhb-section-lien" href="#omhb-matchs">Tout le calendrier &rarr;</a>
+      <h2 class="omhb-section-titre">Résultats &amp; classements</h2>
+      <a class="omhb-section-lien" href="#omhb-matchs">Page Calendrier &rarr;</a>
     </div>
-    <div class="omhb-cadre-scorenco">
-      <div class="demo-widget-entete">&#9889; Aperçu du widget Score'n'co (partenaire officiel FFHB) &mdash; les vrais résultats s'afficheront automatiquement</div>
-      <div class="demo-match">
-        <div>
-          <p class="demo-meta">Samedi 14 f&eacute;vrier &middot; 15h00 &middot; R&eacute;gionale 2 M &middot; &Agrave; domicile</p>
-          <p class="demo-equipes">OMHB 1 &mdash; Bourges Handball 2</p>
-        </div>
-        <span class="demo-a-venir">&Agrave; venir</span>
-      </div>
-      <div class="demo-match">
-        <div>
-          <p class="demo-meta">Samedi 14 f&eacute;vrier &middot; 17h00 &middot; R&eacute;gionale 2 F &middot; Ext&eacute;rieur</p>
-          <p class="demo-equipes">Vierzon HB &mdash; OMHB 2</p>
-        </div>
-        <span class="demo-a-venir">&Agrave; venir</span>
-      </div>
-      <div class="demo-match">
-        <div>
-          <p class="demo-meta">Dimanche 8 f&eacute;vrier &middot; -13 ans &middot; Championnat</p>
-          <p class="demo-equipes">OMHB &mdash; Saint-Doulchard</p>
-        </div>
-        <span class="demo-score">24 &ndash; 21</span>
-      </div>
-      <div class="demo-match">
-        <div>
-          <p class="demo-meta">Samedi 7 f&eacute;vrier &middot; Loisirs &middot; Tournoi amical</p>
-          <p class="demo-equipes">OMHB &mdash; Bourges Loisirs</p>
-        </div>
-        <span class="demo-score">31 &ndash; 27</span>
-      </div>
+    <p class="omhb-section-texte">Suivez chaque équipe du club (y compris les équipes en entente) directement sur les pages officielles de la FFHB.</p>
+    <div class="omhb-grille-equipes">
+      <a class="omhb-equipe-lien" href="#omhb-matchs">
+        <span class="omhb-equipe-nom">Séniors M1</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="#omhb-matchs">
+        <span class="omhb-equipe-nom">Séniors F1</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="#omhb-matchs">
+        <span class="omhb-equipe-nom">-13 ans <em>(entente)</em></span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="#omhb-matchs">
+        <span class="omhb-equipe-nom">-11 ans <em>(entente)</em></span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="#omhb-matchs">
+        <span class="omhb-equipe-nom">Loisirs</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
     </div>
   </div>
 </section>
@@ -274,7 +267,7 @@
           <li><a href="#omhb-acces">Le club</a></li>
           <li><a href="#omhb-acces">Équipes</a></li>
           <li><a href="#omhb-acces">Adhésion</a></li>
-          <li><a href="#omhb-acces">Contact</a></li>
+          <li><a href="#omhb-acces">Contacts</a></li>
         </ul>
       </div>
       <div>

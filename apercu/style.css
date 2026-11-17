@@ -417,25 +417,48 @@ input[type="submit"]:hover {
 .omhb-acces-titre { font-size: 21px; font-weight: 800; margin: 0 0 8px; color: var(--omhb-anthracite); }
 .omhb-acces-carte p { margin: 0; color: var(--omhb-texte-clair); font-size: 15.5px; }
 
-/* ---------- Module matchs (Score'n'co) ---------- */
+/* ---------- Équipes : liens vers les pages FFHB ---------- */
 
-.omhb-cadre-scorenco {
+.omhb-section-texte {
+  color: var(--omhb-texte-clair);
+  margin: -8px 0 30px;
+  max-width: 720px;
+}
+
+.omhb-grille-equipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.omhb-equipe-lien {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   background: var(--omhb-blanc);
   border: 1.5px solid #f6e8e9;
+  border-left: 4px solid var(--omhb-rouge);
   border-radius: var(--omhb-rayon);
   box-shadow: var(--omhb-ombre);
-  overflow: hidden;
+  padding: 22px 24px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.omhb-cadre-scorenco iframe {
-  display: block;
-  width: 100%;
-  height: 620px;
-  border: 0;
+.omhb-equipe-lien:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(204, 21, 23, 0.18);
 }
 
-@media (max-width: 700px) {
-  .omhb-cadre-scorenco iframe { height: 520px; }
+.omhb-equipe-nom {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--omhb-anthracite);
+}
+
+.omhb-equipe-suite {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--omhb-rouge);
 }
 
 /* ---------- Contenu des pages / articles ---------- */
