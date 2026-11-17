@@ -127,14 +127,25 @@ permaliens après création de chaque page.
 6. Si un article contient des codes courts ou balises propres à Joomla
    (`{loadposition}`…), nettoyez-les à la main dans l'éditeur.
 
-## Étape 7 — Calendrier et résultats
+## Étape 7 — Calendrier et résultats (Score'n'co, partenaire FFHB)
 
-Le club est référencé sur **Score'n'co** :
+Les résultats FFHB sont diffusés par **Score'n'co**. Le club y est référencé :
 `https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2`
 
-1. Sur Score'n'co, récupérez le code d'intégration (widget) du club ou de chaque équipe.
-2. Collez-le dans la page « Calendrier & résultats » via un bloc **HTML personnalisé**.
-3. Alternative : plugin SportsPress pour saisir les matchs manuellement.
+1. Connectez-vous à l'espace club **scorenco.com/admin** (compte gratuit ; si la
+   page du club est déjà gérée, demandez l'accès à Score'n'co).
+2. Créez un widget : **Matchs de la semaine**, **Équipe(s)** (derniers résultats
+   + prochains matchs) ou **Classement**, puis copiez le lien du widget.
+3. Deux affichages possibles :
+   - **Page d'accueil** : *Personnaliser > Page d'accueil > URL du widget
+     Score'n'co* — la section « Résultats & prochains matchs » s'affiche
+     automatiquement (laisser vide pour la masquer) ;
+   - **Page « Calendrier & résultats »** : shortcode du thème
+     `[omhb_scorenco url="https://scorenco.com/..." hauteur="500"]`.
+4. Alternative : installer l'extension officielle WordPress
+   **« Score'n'co Widget »** (Extensions > Ajouter) et coller le code
+   d'intégration dans un bloc **HTML personnalisé**.
+5. Les données se mettent à jour automatiquement, sans intervention.
 
 ## Étape 8 — Mise en production (bascule du domaine)
 

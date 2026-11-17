@@ -115,7 +115,11 @@ input[type="submit"]:hover {
 .omhb-topbar a { color: rgba(255, 255, 255, 0.85); }
 .omhb-topbar a:hover { color: var(--omhb-blanc); }
 
-.omhb-topbar-reseaux { display: flex; gap: 18px; }
+.omhb-topbar-reseaux { display: flex; gap: 16px; align-items: center; }
+
+.omhb-icone-reseau { display: inline-flex; align-items: center; }
+
+.omhb-icone-reseau svg { width: 18px; height: 18px; fill: currentColor; display: block; }
 
 .omhb-entete {
   position: sticky;
@@ -347,7 +351,7 @@ input[type="submit"]:hover {
   box-shadow: 0 16px 40px rgba(22, 24, 29, 0.16);
 }
 
-.omhb-carte-image { aspect-ratio: 16 / 9; overflow: hidden; background: #f7e3e4; }
+.omhb-carte-image { aspect-ratio: 16 / 9; overflow: hidden; background: #fbeeee; }
 .omhb-carte-image img { width: 100%; height: 100%; object-fit: cover; }
 
 .omhb-carte-corps { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
@@ -383,7 +387,7 @@ input[type="submit"]:hover {
 .omhb-acces-carte {
   background: var(--omhb-blanc);
   color: var(--omhb-texte);
-  border: 1.5px solid #f0d9da;
+  border: 1.5px solid #f6e8e9;
   border-top: 4px solid var(--omhb-rouge);
   border-radius: var(--omhb-rayon);
   padding: 34px 30px;
@@ -412,6 +416,27 @@ input[type="submit"]:hover {
 
 .omhb-acces-titre { font-size: 21px; font-weight: 800; margin: 0 0 8px; color: var(--omhb-anthracite); }
 .omhb-acces-carte p { margin: 0; color: var(--omhb-texte-clair); font-size: 15.5px; }
+
+/* ---------- Module matchs (Score'n'co) ---------- */
+
+.omhb-cadre-scorenco {
+  background: var(--omhb-blanc);
+  border: 1.5px solid #f6e8e9;
+  border-radius: var(--omhb-rayon);
+  box-shadow: var(--omhb-ombre);
+  overflow: hidden;
+}
+
+.omhb-cadre-scorenco iframe {
+  display: block;
+  width: 100%;
+  height: 620px;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .omhb-cadre-scorenco iframe { height: 520px; }
+}
 
 /* ---------- Contenu des pages / articles ---------- */
 

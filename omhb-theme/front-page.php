@@ -62,10 +62,14 @@ if ( $omhb_hero_image_id ) {
 					$omhb_facebook  = get_theme_mod( 'omhb_facebook', 'https://www.facebook.com/OlympiqueMehunHandball' );
 					$omhb_instagram = get_theme_mod( 'omhb_instagram', 'https://www.instagram.com/om_hb18/' );
 					if ( $omhb_facebook ) {
-						echo '<a href="' . esc_url( $omhb_facebook ) . '" target="_blank" rel="noopener">Facebook</a> · ';
+						echo '<a class="omhb-icone-reseau" href="' . esc_url( $omhb_facebook ) . '" target="_blank" rel="noopener" aria-label="Facebook">';
+						omhb_icone_reseau( 'facebook' );
+						echo '</a> ';
 					}
 					if ( $omhb_instagram ) {
-						echo '<a href="' . esc_url( $omhb_instagram ) . '" target="_blank" rel="noopener">Instagram</a>';
+						echo '<a class="omhb-icone-reseau" href="' . esc_url( $omhb_instagram ) . '" target="_blank" rel="noopener" aria-label="Instagram">';
+						omhb_icone_reseau( 'instagram' );
+						echo '</a>';
 					}
 					?>
 				</p>
@@ -125,6 +129,17 @@ if ( $omhb_hero_image_id ) {
 				<p><?php esc_html_e( 'Aucune actualité publiée pour le moment. Créez votre premier article dans Articles > Ajouter.', 'omhb' ); ?></p>
 			</div>
 		<?php endif; ?>
+	</div>
+</section>
+
+<section class="omhb-section" id="omhb-matchs">
+	<div class="omhb-conteneur">
+		<div class="omhb-section-entete">
+			<h2 class="omhb-section-titre"><?php esc_html_e( 'Résultats & prochains matchs', 'omhb' ); ?></h2>
+			<?php $omhb_scorenco = get_theme_mod( 'omhb_scorenco_url', 'https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2' ); ?>
+			<a class="omhb-section-lien" href="<?php echo esc_url( $omhb_scorenco ); ?>" target="_blank" rel="noopener"><?php esc_html_e( 'Tout le calendrier →', 'omhb' ); ?></a>
+		</div>
+		<?php echo do_shortcode( '[omhb_scorenco]' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	</div>
 </section>
 

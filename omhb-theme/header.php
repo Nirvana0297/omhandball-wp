@@ -40,10 +40,10 @@
 			$omhb_instagram = get_theme_mod( 'omhb_instagram', 'https://www.instagram.com/om_hb18/' );
 			if ( $omhb_facebook ) :
 				?>
-				<a href="<?php echo esc_url( $omhb_facebook ); ?>" target="_blank" rel="noopener">Facebook</a>
+				<a class="omhb-icone-reseau" href="<?php echo esc_url( $omhb_facebook ); ?>" target="_blank" rel="noopener" aria-label="Facebook"><?php omhb_icone_reseau( 'facebook' ); ?></a>
 			<?php endif; ?>
 			<?php if ( $omhb_instagram ) : ?>
-				<a href="<?php echo esc_url( $omhb_instagram ); ?>" target="_blank" rel="noopener">Instagram</a>
+				<a class="omhb-icone-reseau" href="<?php echo esc_url( $omhb_instagram ); ?>" target="_blank" rel="noopener" aria-label="Instagram"><?php omhb_icone_reseau( 'instagram' ); ?></a>
 			<?php endif; ?>
 		</div>
 	</div>

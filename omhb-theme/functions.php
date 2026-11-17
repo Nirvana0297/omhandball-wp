@@ -178,4 +178,53 @@ function omhb_fil_ariane() {
 	echo '</nav>';
 }
 
+/**
+ * Affiche le logo officiel d'un réseau social (SVG inline, sans dépendance externe).
+ *
+ * @param string $reseau 'facebook' ou 'instagram'.
+ */
+function omhb_icone_reseau( $reseau ) {
+	if ( 'facebook' === $reseau ) {
+		echo '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21.5v-7.8h2.62l.39-3.04H13.5V8.72c0-.88.24-1.48 1.5-1.48h1.6V4.53c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.41-3.9 4.01v2.24H7.5v3.04h2.86v7.8h3.14z"/></svg>';
+	} elseif ( 'instagram' === $reseau ) {
+		echo '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>';
+	}
+}
+
+/**
+ * Shortcode [omhb_scorenco] : affiche le widget Score'n'co (résultats, calendrier,
+ * classements) créé depuis l'espace club scorenco.com/admin.
+ *
+ * Exemple : [omhb_scorenco hauteur="600"]
+ *           [omhb_scorenco url="https://scorenco.com/..." hauteur="450"]
+ *
+ * @param array $atts Attributs du shortcode.
+ * @return string HTML du widget.
+ */
+function omhb_shortcode_scorenco( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'url'     => get_theme_mod( 'omhb_scorenco_url', 'https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2' ),
+			'hauteur' => '620',
+		),
+		$atts,
+		'omhb_scorenco'
+	);
+
+	$omhb_url = esc_url_raw( $atts['url'] );
+	if ( ! $omhb_url ) {
+		return '';
+	}
+
+	$omhb_hauteur = max( 200, absint( $atts['hauteur'] ) );
+
+	return sprintf(
+		'<div class="omhb-cadre-scorenco"><iframe src="%1$s" title="%2$s" loading="lazy" style="height:%3$dpx" referrerpolicy="no-referrer-when-downgrade"></iframe></div>',
+		esc_url( $omhb_url ),
+		esc_attr__( "Résultats et matchs de l'Olympique Mehun Handball (Score'n'co)", 'omhb' ),
+		$omhb_hauteur
+	);
+}
+add_shortcode( 'omhb_scorenco', 'omhb_shortcode_scorenco' );
+
 require get_template_directory() . '/inc/customizer.php';

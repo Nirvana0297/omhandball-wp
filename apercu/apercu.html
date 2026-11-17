@@ -16,9 +16,9 @@
   }
   .apercu-note strong { color: #fff; }
   /* Images d'actualité factices pour l'aperçu */
-  .omhb-carte-image.demo-1 { background: linear-gradient(135deg, #cc1517 0%, #6e0b0d 100%); position: relative; }
-  .omhb-carte-image.demo-2 { background: linear-gradient(135deg, #9f1012 0%, #5e070a 100%); position: relative; }
-  .omhb-carte-image.demo-3 { background: linear-gradient(135deg, #e0595f 0%, #9f1012 100%); position: relative; }
+  .omhb-carte-image.demo-1 { background: linear-gradient(135deg, #dd4a4e 0%, #b31619 100%); position: relative; }
+  .omhb-carte-image.demo-2 { background: linear-gradient(135deg, #c22427 0%, #8f0e10 100%); position: relative; }
+  .omhb-carte-image.demo-3 { background: linear-gradient(135deg, #ea8a8e 0%, #cc1517 100%); position: relative; }
   .omhb-carte-image.demo-1::after,
   .omhb-carte-image.demo-2::after,
   .omhb-carte-image.demo-3::after {
@@ -33,6 +33,42 @@
     font-weight: 600;
   }
   .omhb-hero { background-image: linear-gradient(100deg, rgba(94, 7, 10, 0.45) 25%, rgba(94, 7, 10, 0) 70%); }
+  /* Aperçu du widget Score'n'co (simulation) */
+  .demo-widget-entete {
+    padding: 12px 20px;
+    background: #fdf3f3;
+    color: var(--omhb-rouge);
+    font-size: 13px;
+    font-weight: 700;
+    border-bottom: 1px solid #f6e8e9;
+  }
+  .demo-match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border-bottom: 1px solid #f6e8e9;
+  }
+  .demo-match:last-child { border-bottom: 0; }
+  .demo-match .demo-meta { font-size: 13px; color: var(--omhb-texte-clair); }
+  .demo-match .demo-equipes { font-weight: 700; color: var(--omhb-anthracite); }
+  .demo-match .demo-score {
+    background: var(--omhb-rouge);
+    color: #fff;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+  .demo-match .demo-a-venir {
+    border: 1.5px solid var(--omhb-rouge);
+    color: var(--omhb-rouge);
+    font-weight: 800;
+    padding: 4px 13px;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
 </style>
 </head>
 <body class="omhb">
@@ -47,8 +83,8 @@
       <a href="mailto:5418002@cvl.ffhandball.net">✉️ 5418002@cvl.ffhandball.net</a>
     </div>
     <div class="omhb-topbar-reseaux">
-      <a href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener">Instagram</a>
+      <a class="omhb-icone-reseau" href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21.5v-7.8h2.62l.39-3.04H13.5V8.72c0-.88.24-1.48 1.5-1.48h1.6V4.53c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.41-3.9 4.01v2.24H7.5v3.04h2.86v7.8h3.14z"/></svg></a>
+      <a class="omhb-icone-reseau" href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
     </div>
   </div>
 </div>
@@ -109,7 +145,7 @@
     <div class="omhb-infos-item">
       <div>
         <p class="omhb-infos-titre">Toute l'actu sur les réseaux</p>
-        <p><a href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener">Instagram</a></p>
+        <p><a class="omhb-icone-reseau" href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21.5v-7.8h2.62l.39-3.04H13.5V8.72c0-.88.24-1.48 1.5-1.48h1.6V4.53c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.41-3.9 4.01v2.24H7.5v3.04h2.86v7.8h3.14z"/></svg></a> <a class="omhb-icone-reseau" href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a></p>
       </div>
     </div>
   </div>
@@ -176,6 +212,46 @@
   </div>
 </section>
 
+<section class="omhb-section" id="omhb-matchs">
+  <div class="omhb-conteneur">
+    <div class="omhb-section-entete">
+      <h2 class="omhb-section-titre">Résultats &amp; prochains matchs</h2>
+      <a class="omhb-section-lien" href="#omhb-matchs">Tout le calendrier &rarr;</a>
+    </div>
+    <div class="omhb-cadre-scorenco">
+      <div class="demo-widget-entete">&#9889; Aperçu du widget Score'n'co (partenaire officiel FFHB) &mdash; les vrais résultats s'afficheront automatiquement</div>
+      <div class="demo-match">
+        <div>
+          <p class="demo-meta">Samedi 14 f&eacute;vrier &middot; 15h00 &middot; R&eacute;gionale 2 M &middot; &Agrave; domicile</p>
+          <p class="demo-equipes">OMHB 1 &mdash; Bourges Handball 2</p>
+        </div>
+        <span class="demo-a-venir">&Agrave; venir</span>
+      </div>
+      <div class="demo-match">
+        <div>
+          <p class="demo-meta">Samedi 14 f&eacute;vrier &middot; 17h00 &middot; R&eacute;gionale 2 F &middot; Ext&eacute;rieur</p>
+          <p class="demo-equipes">Vierzon HB &mdash; OMHB 2</p>
+        </div>
+        <span class="demo-a-venir">&Agrave; venir</span>
+      </div>
+      <div class="demo-match">
+        <div>
+          <p class="demo-meta">Dimanche 8 f&eacute;vrier &middot; -13 ans &middot; Championnat</p>
+          <p class="demo-equipes">OMHB &mdash; Saint-Doulchard</p>
+        </div>
+        <span class="demo-score">24 &ndash; 21</span>
+      </div>
+      <div class="demo-match">
+        <div>
+          <p class="demo-meta">Samedi 7 f&eacute;vrier &middot; Loisirs &middot; Tournoi amical</p>
+          <p class="demo-equipes">OMHB &mdash; Bourges Loisirs</p>
+        </div>
+        <span class="demo-score">31 &ndash; 27</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="omhb-cta">
   <div class="omhb-conteneur">
     <h2>Rejoignez l'Olympique Mehun Handball !</h2>
@@ -204,8 +280,8 @@
       <div>
         <h3>Nous suivre</h3>
         <ul>
-          <li><a href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a class="omhb-icone-reseau" href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21.5v-7.8h2.62l.39-3.04H13.5V8.72c0-.88.24-1.48 1.5-1.48h1.6V4.53c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.41-3.9 4.01v2.24H7.5v3.04h2.86v7.8h3.14z"/></svg></a></li>
+          <li><a class="omhb-icone-reseau" href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a></li>
           <li><a href="mailto:5418002@cvl.ffhandball.net">5418002@cvl.ffhandball.net</a></li>
         </ul>
       </div>

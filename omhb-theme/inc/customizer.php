@@ -73,6 +73,18 @@ function omhb_personnaliser( $wp_customize ) {
 		) );
 	}
 
+	$wp_customize->add_setting( 'omhb_scorenco_url', array(
+		'default'           => 'https://scorenco.com/hand/clubs/olympique-mehun-handball-2np2',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+
+	$wp_customize->add_control( 'omhb_scorenco_url', array(
+		'label'       => __( "URL du widget Score'n'co (résultats & matchs)", 'omhb' ),
+		'description' => __( "Créez un widget « Matchs de la semaine » ou « Équipe » dans votre espace club scorenco.com/admin (rubrique Widgets), puis collez ici le lien fourni. Laissez vide pour masquer la section de la page d'accueil.", 'omhb' ),
+		'section'     => 'omhb_accueil',
+		'type'        => 'url',
+	) );
+
 	$wp_customize->add_setting( 'omhb_hero_image', array(
 		'default'           => '',
 		'sanitize_callback' => 'absint',
