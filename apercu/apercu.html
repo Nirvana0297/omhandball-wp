@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aperçu — Olympique Mehun Handball</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="logo-club.png">
+<style>
+  .apercu-note {
+    background: #1d4ed8;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .apercu-note strong { color: #fff; }
+  /* Images d'actualité factices pour l'aperçu */
+  .omhb-carte-image.demo-1 { background: linear-gradient(135deg, #dd4a4e 0%, #b31619 100%); position: relative; }
+  .omhb-carte-image.demo-2 { background: linear-gradient(135deg, #c22427 0%, #8f0e10 100%); position: relative; }
+  .omhb-carte-image.demo-3 { background: linear-gradient(135deg, #ea8a8e 0%, #cc1517 100%); position: relative; }
+  .omhb-carte-image.demo-1::after,
+  .omhb-carte-image.demo-2::after,
+  .omhb-carte-image.demo-3::after {
+    content: "📷 Photo d'illustration";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .omhb-hero { background-image: linear-gradient(100deg, rgba(94, 7, 10, 0.45) 25%, rgba(94, 7, 10, 0) 70%); }
+  /* Aperçu de la grille des équipes (liens FFHB) */
+  .omhb-section-texte {
+    color: var(--omhb-texte-clair);
+    margin: -8px 0 30px;
+    max-width: 720px;
+  }
+  .omhb-grille-equipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  .omhb-equipe-lien {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: var(--omhb-blanc);
+    border: 1.5px solid #f6e8e9;
+    border-left: 4px solid var(--omhb-rouge);
+    border-radius: var(--omhb-rayon);
+    box-shadow: var(--omhb-ombre);
+    padding: 22px 24px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .omhb-equipe-lien:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(204, 21, 23, 0.18);
+  }
+  .omhb-equipe-nom {
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--omhb-anthracite);
+  }
+  .omhb-equipe-suite {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--omhb-rouge);
+  }
+</style>
+</head>
+<body class="omhb">
+
+<div class="apercu-note">🔍 <strong>Aperçu statique</strong> du futur site — le site réel sera généré par WordPress avec ce même design (thème <em>omhb-theme</em>).</div>
+
+<div class="omhb-topbar">
+  <div class="omhb-conteneur">
+    <div>
+      <a href="tel:+33671657533">📞 06 71 65 75 33</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:5418002@cvl.ffhandball.net">✉️ 5418002@cvl.ffhandball.net</a>
+    </div>
+    <div class="omhb-topbar-reseaux">
+      <a class="omhb-icone-reseau" href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21.5v-7.8h2.62l.39-3.04H13.5V8.72c0-.88.24-1.48 1.5-1.48h1.6V4.53c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.41-3.9 4.01v2.24H7.5v3.04h2.86v7.8h3.14z"/></svg></a>
+      <a class="omhb-icone-reseau" href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<header class="omhb-entete">
+  <div class="omhb-conteneur">
+    <a class="omhb-logo" href="#">
+      <img src="logo-club.png" alt="Olympique Mehun Handball" width="1254" height="1254">
+    </a>
+
+    <button class="omhb-burger" aria-expanded="false" aria-controls="omhb-menu-principal" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="omhb-navigation" id="omhb-menu-principal" aria-label="Menu principal">
+      <ul>
+        <li class="current-menu-item"><a href="#">Accueil</a></li>
+        <li><a href="#omhb-acces">Le club</a></li>
+        <li><a href="#omhb-acces">Équipes</a></li>
+        <li><a href="#omhb-acces">Adhésion</a></li>
+        <li><a href="#omhb-acces">Calendrier</a></li>
+        <li><a href="#omhb-acces">Sponsoring</a></li>
+        <li><a href="#omhb-acces">Contacts</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="omhb-hero">
+  <div class="omhb-hero-fond"></div>
+  <div class="omhb-conteneur">
+    <div class="omhb-hero-contenu">
+      <span class="omhb-hero-badge">Club de handball</span>
+      <h1 class="omhb-hero-titre">La Passion du Hand depuis 1968</h1>
+      <p class="omhb-hero-texte">BabyHand, jeunes, seniors, loisirs : l'Olympique Mehun Handball accueille tous les passionnés de handball, du débutant au compétiteur.</p>
+      <div class="omhb-hero-actions">
+        <a class="omhb-bouton" href="#omhb-acces">Adhérer au club</a>
+        <a class="omhb-bouton-secondaire" href="#omhb-actualites">Voir les actualités</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="omhb-infos">
+  <div class="omhb-conteneur">
+    <div class="omhb-infos-item">
+      <div>
+        <p class="omhb-infos-titre">Où nous trouver</p>
+        <p>Gymnase Pierre de Coubertin, Boulevard de la Liberté, 18500 Mehun-sur-Yèvre</p>
+      </div>
+    </div>
+    <div class="omhb-infos-item">
+      <div>
+        <p class="omhb-infos-titre">Nous contacter</p>
+        <p><a href="tel:+33671657533">06 71 65 75 33</a> · <a href="mailto:5418002@cvl.ffhandball.net">5418002@cvl.ffhandball.net</a></p>
+      </div>
+    </div>
+    <div class="omhb-infos-item">
+      <div>
+        <p class="omhb-infos-titre">Toute l'actu sur les réseaux</p>
+        <p><a class="omhb-icone-reseau" href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21.5v-7.8h2.62l.39-3.04H13.5V8.72c0-.88.24-1.48 1.5-1.48h1.6V4.53c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.41-3.9 4.01v2.24H7.5v3.04h2.86v7.8h3.14z"/></svg></a> <a class="omhb-icone-reseau" href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="omhb-section" id="omhb-acces">
+  <div class="omhb-conteneur">
+    <div class="omhb-grille-acces">
+      <a class="omhb-acces-carte" href="#omhb-acces">
+        <div class="omhb-acces-icone">✋</div>
+        <h2 class="omhb-acces-titre">Adhésion</h2>
+        <p>Tarifs, réductions familiales, aides à la licence et documents à fournir.</p>
+      </a>
+      <a class="omhb-acces-carte" href="#omhb-acces">
+        <div class="omhb-acces-icone">⏱️</div>
+        <h2 class="omhb-acces-titre">Équipes &amp; horaires</h2>
+        <p>Du BabyHand aux loisirs : retrouvez les catégories et les créneaux d'entraînement.</p>
+      </a>
+      <a class="omhb-acces-carte" href="#omhb-acces">
+        <div class="omhb-acces-icone">📍</div>
+        <h2 class="omhb-acces-titre">Contacts &amp; accès</h2>
+        <p>Le bureau (présidente, secrétaire, trésorière), le gymnase, le téléphone et le formulaire : tous les moyens de nous joindre.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="omhb-section omhb-section-grise" id="omhb-actualites">
+  <div class="omhb-conteneur">
+    <div class="omhb-section-entete">
+      <h2 class="omhb-section-titre">Actualités du club</h2>
+      <a class="omhb-section-lien" href="#omhb-actualites">Toutes les actualités →</a>
+    </div>
+
+    <div class="omhb-grille-articles">
+      <article class="omhb-carte">
+        <a class="omhb-carte-image demo-1" href="#" aria-hidden="true" tabindex="-1"></a>
+        <div class="omhb-carte-corps">
+          <span class="omhb-carte-date">2 septembre 2026</span>
+          <h3 class="omhb-carte-titre"><a href="#">Reprise des entraînements</a></h3>
+          <p class="omhb-carte-extrait">Après nos équipes seniors, c'est au tour des autres collectifs de re-chausser les baskets ! Découvrez les créneaux de chaque catégorie…</p>
+          <a class="omhb-carte-lire" href="#">Lire la suite →</a>
+        </div>
+      </article>
+      <article class="omhb-carte">
+        <a class="omhb-carte-image demo-2" href="#" aria-hidden="true" tabindex="-1"></a>
+        <div class="omhb-carte-corps">
+          <span class="omhb-carte-date">25 août 2026</span>
+          <h3 class="omhb-carte-titre"><a href="#">Adhésion 2026-2027 : c'est ouvert !</a></h3>
+          <p class="omhb-carte-extrait">Toutes les informations et documents pour rejoindre le club cette saison, du BabyHand aux loisirs.</p>
+          <a class="omhb-carte-lire" href="#">Lire la suite →</a>
+        </div>
+      </article>
+      <article class="omhb-carte">
+        <a class="omhb-carte-image demo-3" href="#" aria-hidden="true" tabindex="-1"></a>
+        <div class="omhb-carte-corps">
+          <span class="omhb-carte-date">18 août 2026</span>
+          <h3 class="omhb-carte-titre"><a href="#">Le club recherche des bénévoles</a></h3>
+          <p class="omhb-carte-extrait">Joueurs, parents : impliquez-vous dans la vie du club en encadrant les équipes de moins de 10 ans et le baby hand.</p>
+          <a class="omhb-carte-lire" href="#">Lire la suite →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="omhb-section" id="omhb-matchs">
+  <div class="omhb-conteneur">
+    <div class="omhb-section-entete">
+      <h2 class="omhb-section-titre">Résultats &amp; classements</h2>
+      <a class="omhb-section-lien" href="#omhb-matchs">Page Calendrier &rarr;</a>
+    </div>
+    <p class="omhb-section-texte">Suivez chaque équipe du club directement sur les pages officielles de la FFHB (cliquez sur une équipe pour ouvrir ses résultats et son classement).</p>
+    <div class="omhb-grille-equipes">
+      <a class="omhb-equipe-lien" href="https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/championnat-seniors-m-26-27-32905/" target="_blank" rel="noopener">
+        <span class="omhb-equipe-nom">EDM – Seniors M</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/1ere-division-territoriale-16-feminine-32962/" target="_blank" rel="noopener">
+        <span class="omhb-equipe-nom">EDF – Seniors F</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="https://www.ffhandball.fr/competitions/saison-2026-2027-22/regional/honneur-regional-masculin-26-27-32351/" target="_blank" rel="noopener">
+        <span class="omhb-equipe-nom">R3M – Honneur régional M</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="https://www.ffhandball.fr/competitions/saison-2026-2027-22/regional/prenationale-feminine-26-27-32353/" target="_blank" rel="noopener">
+        <span class="omhb-equipe-nom">PNF – Pré-Nationale F</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-18-championnat-u11-mixte-2026-2027-33753/poule-200733/" target="_blank" rel="noopener">
+        <span class="omhb-equipe-nom">U11 M</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-18-championnat-u11-mixte-2026-2027-33753/poule-200740/" target="_blank" rel="noopener">
+        <span class="omhb-equipe-nom">U11 F</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+      <a class="omhb-equipe-lien" href="https://www.ffhandball.fr/competitions/saison-2026-2027-22/departemental/cd36-championnat-u15m-2026-2027-33681/" target="_blank" rel="noopener">
+        <span class="omhb-equipe-nom">U15 M</span>
+        <span class="omhb-equipe-suite">Résultats &amp; classement <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="omhb-cta">
+  <div class="omhb-conteneur">
+    <h2>Rejoignez l'Olympique Mehun Handball !</h2>
+    <p>Débutant ou confirmé, de 3 à 99 ans, il y a une place pour vous sur les terrains.</p>
+    <a class="omhb-bouton" href="#omhb-acces">J'adhère maintenant</a>
+  </div>
+</section>
+
+<footer class="omhb-pied">
+  <div class="omhb-conteneur">
+    <div class="omhb-pied-colonnes">
+      <div>
+        <h3>Olympique Mehun Handball</h3>
+        <p>La Passion du Hand depuis 1968</p>
+        <p>Gymnase Pierre de Coubertin, Boulevard de la Liberté, 18500 Mehun-sur-Yèvre</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="#omhb-acces">Le club</a></li>
+          <li><a href="#omhb-acces">Équipes</a></li>
+          <li><a href="#omhb-acces">Adhésion</a></li>
+          <li><a href="#omhb-acces">Contacts</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Nous suivre</h3>
+        <ul>
+          <li><a class="omhb-icone-reseau" href="https://www.facebook.com/OlympiqueMehunHandball" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21.5v-7.8h2.62l.39-3.04H13.5V8.72c0-.88.24-1.48 1.5-1.48h1.6V4.53c-.28-.04-1.23-.12-2.34-.12-2.32 0-3.9 1.41-3.9 4.01v2.24H7.5v3.04h2.86v7.8h3.14z"/></svg></a></li>
+          <li><a class="omhb-icone-reseau" href="https://www.instagram.com/om_hb18/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a></li>
+          <li><a href="mailto:5418002@cvl.ffhandball.net">5418002@cvl.ffhandball.net</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="omhb-pied-bas">
+      <span>&copy; 2026 Olympique Mehun Handball — Tous droits réservés</span>
+      <span>Club affilié à la FFHB</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
