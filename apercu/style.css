@@ -97,8 +97,8 @@ input[type="submit"]:hover {
 /* ---------- En-tête ---------- */
 
 .omhb-topbar {
-  background: var(--omhb-anthracite);
-  color: rgba(255, 255, 255, 0.85);
+  background: var(--omhb-rouge-fonce);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
 }
 
@@ -208,7 +208,7 @@ input[type="submit"]:hover {
   min-height: 520px;
   display: flex;
   align-items: center;
-  background: var(--omhb-anthracite);
+  background: linear-gradient(120deg, var(--omhb-rouge) 0%, var(--omhb-rouge-fonce) 100%);
   color: var(--omhb-blanc);
   overflow: hidden;
 }
@@ -218,14 +218,14 @@ input[type="submit"]:hover {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
 .omhb-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, rgba(22, 24, 29, 0.92) 25%, rgba(22, 24, 29, 0.35) 70%);
+  background: linear-gradient(100deg, rgba(120, 8, 12, 0.55) 25%, rgba(120, 8, 12, 0) 70%);
 }
 
 .omhb-hero .omhb-conteneur { position: relative; z-index: 2; }
@@ -263,8 +263,9 @@ input[type="submit"]:hover {
 /* ---------- Bandeau infos rapides ---------- */
 
 .omhb-infos {
-  background: var(--omhb-rouge);
-  color: var(--omhb-blanc);
+  background: var(--omhb-blanc);
+  color: var(--omhb-texte);
+  border-bottom: 1.5px solid #f0d9da;
   padding: 26px 0;
 }
 
@@ -282,10 +283,11 @@ input[type="submit"]:hover {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin: 0 0 4px;
+  color: var(--omhb-rouge);
 }
 
-.omhb-infos-item p { margin: 0; font-size: 15px; opacity: 0.95; }
-.omhb-infos-item a { color: var(--omhb-blanc); text-decoration: underline; }
+.omhb-infos-item p { margin: 0; font-size: 15px; }
+.omhb-infos-item a { color: var(--omhb-rouge-fonce); text-decoration: underline; }
 
 /* ---------- Sections ---------- */
 
@@ -345,7 +347,7 @@ input[type="submit"]:hover {
   box-shadow: 0 16px 40px rgba(22, 24, 29, 0.16);
 }
 
-.omhb-carte-image { aspect-ratio: 16 / 9; overflow: hidden; background: var(--omhb-anthracite-2); }
+.omhb-carte-image { aspect-ratio: 16 / 9; overflow: hidden; background: #f7e3e4; }
 .omhb-carte-image img { width: 100%; height: 100%; object-fit: cover; }
 
 .omhb-carte-corps { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
@@ -379,15 +381,22 @@ input[type="submit"]:hover {
 }
 
 .omhb-acces-carte {
-  background: var(--omhb-anthracite);
-  color: var(--omhb-blanc);
+  background: var(--omhb-blanc);
+  color: var(--omhb-texte);
+  border: 1.5px solid #f0d9da;
+  border-top: 4px solid var(--omhb-rouge);
   border-radius: var(--omhb-rayon);
   padding: 34px 30px;
   display: block;
-  transition: transform 0.15s ease, background 0.15s ease;
+  box-shadow: var(--omhb-ombre);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.omhb-acces-carte:hover { transform: translateY(-4px); background: var(--omhb-anthracite-2); color: var(--omhb-blanc); }
+.omhb-acces-carte:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(204, 21, 23, 0.18);
+  color: var(--omhb-texte);
+}
 
 .omhb-acces-icone {
   width: 52px;
@@ -401,13 +410,13 @@ input[type="submit"]:hover {
   margin-bottom: 18px;
 }
 
-.omhb-acces-titre { font-size: 21px; font-weight: 800; margin: 0 0 8px; }
-.omhb-acces-carte p { margin: 0; color: rgba(255, 255, 255, 0.75); font-size: 15.5px; }
+.omhb-acces-titre { font-size: 21px; font-weight: 800; margin: 0 0 8px; color: var(--omhb-anthracite); }
+.omhb-acces-carte p { margin: 0; color: var(--omhb-texte-clair); font-size: 15.5px; }
 
 /* ---------- Contenu des pages / articles ---------- */
 
 .omhb-page-entete {
-  background: var(--omhb-anthracite);
+  background: linear-gradient(120deg, var(--omhb-rouge), var(--omhb-rouge-fonce));
   color: var(--omhb-blanc);
   padding: 64px 0;
 }
@@ -436,7 +445,7 @@ input[type="submit"]:hover {
 }
 
 .omhb-contenu-page th {
-  background: var(--omhb-anthracite);
+  background: var(--omhb-rouge);
   color: var(--omhb-blanc);
   text-align: left;
   padding: 12px 16px;
@@ -480,13 +489,13 @@ input[type="submit"]:hover {
 .omhb-cta h2 { font-size: clamp(26px, 3.5vw, 36px); margin: 0 0 12px; font-weight: 800; }
 .omhb-cta p { margin: 0 0 28px; font-size: 18px; opacity: 0.92; }
 .omhb-cta .omhb-bouton { background: var(--omhb-blanc); color: var(--omhb-rouge); border-color: var(--omhb-blanc); }
-.omhb-cta .omhb-bouton:hover { background: var(--omhb-anthracite); color: var(--omhb-blanc); border-color: var(--omhb-anthracite); box-shadow: none; }
+.omhb-cta .omhb-bouton:hover { background: #7e0c0e; color: var(--omhb-blanc); border-color: #7e0c0e; box-shadow: none; }
 
 /* ---------- Pied de page ---------- */
 
 .omhb-pied {
-  background: var(--omhb-anthracite);
-  color: rgba(255, 255, 255, 0.75);
+  background: var(--omhb-rouge-fonce);
+  color: rgba(255, 255, 255, 0.85);
   padding: 56px 0 0;
   font-size: 15px;
 }
@@ -549,7 +558,7 @@ input:focus, textarea:focus, select:focus {
 /* ---------- Messages WordPress ---------- */
 
 .omhb-message-info {
-  background: var(--omhb-gris);
+  background: #fdf3f3;
   border-left: 4px solid var(--omhb-rouge);
   padding: 16px 20px;
   border-radius: 0 10px 10px 0;

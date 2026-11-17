@@ -37,7 +37,7 @@ function omhb_personnaliser( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'omhb_couleur_anthracite', array(
-		'label'   => __( 'Couleur foncée (fonds, en-tête, pied de page)', 'omhb' ),
+		'label'   => __( 'Couleur des titres (texte foncé)', 'omhb' ),
 		'section' => 'omhb_couleurs',
 	) ) );
 
