@@ -8,6 +8,23 @@
 ?>
 <footer class="omhb-pied">
 	<div class="omhb-conteneur">
+		<div class="omhb-pied-labels">
+			<p class="omhb-pied-labels-titre"><?php esc_html_e( 'Club affilié à la FFHB', 'omhb' ); ?></p>
+			<div class="omhb-labels">
+				<?php
+				$omhb_labels_dir = get_template_directory_uri() . '/assets/img/labels/';
+				$omhb_labels = array(
+					'label-club-affilie' => __( 'Label Club affilié FFHB', 'omhb' ),
+					'label-babyhand'     => __( 'Label Babyhand FFHB', 'omhb' ),
+					'label-handloisir'   => __( 'Label Handloisir FFHB', 'omhb' ),
+					'label-arbitrage'    => __( 'Label Arbitrage FFHB', 'omhb' ),
+				);
+				foreach ( $omhb_labels as $omhb_fichier => $omhb_alt ) :
+					?>
+					<img src="<?php echo esc_url( $omhb_labels_dir . $omhb_fichier . '.png' ); ?>" alt="<?php echo esc_attr( $omhb_alt ); ?>" loading="lazy">
+				<?php endforeach; ?>
+			</div>
+		</div>
 		<div class="omhb-pied-colonnes">
 			<div>
 				<h3><?php bloginfo( 'name' ); ?></h3>

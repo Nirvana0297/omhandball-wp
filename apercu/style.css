@@ -568,6 +568,40 @@ input[type="submit"]:hover {
 .omhb-pied a { color: rgba(255, 255, 255, 0.75); }
 .omhb-pied a:hover { color: var(--omhb-blanc); }
 
+/* ---------- Labels officiels FFHB ---------- */
+
+.omhb-pied-labels {
+  text-align: center;
+  padding: 10px 0 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 42px;
+}
+
+.omhb-pied-labels-titre {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 18px;
+}
+
+.omhb-labels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.omhb-labels img {
+  height: 64px;
+  width: auto;
+  background: var(--omhb-blanc);
+  padding: 9px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
 .omhb-pied-bas {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding: 20px 0;
