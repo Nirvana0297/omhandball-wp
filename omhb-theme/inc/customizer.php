@@ -48,7 +48,7 @@ function omhb_personnaliser( $wp_customize ) {
 	) );
 
 	$omhb_champs_texte = array(
-		'omhb_hero_badge'    => array( __( 'Petit libellé au-dessus du titre', 'omhb' ), __( 'Club de handball', 'omhb' ) ),
+		'omhb_hero_badge'    => array( __( 'Slogan du club (sous le logo, si aucun logo défini)', 'omhb' ), __( 'Club de handball', 'omhb' ) ),
 		'omhb_hero_titre'    => array( __( 'Titre de la bannière', 'omhb' ), __( 'La Passion du Hand depuis 1968', 'omhb' ) ),
 		'omhb_hero_texte'    => array( __( 'Texte de la bannière', 'omhb' ), __( 'BabyHand, jeunes, seniors, loisirs : le club de Mehun-sur-Yèvre accueille tous les passionnés de handball, du débutant au compétiteur.', 'omhb' ) ),
 		'omhb_hero_bouton'   => array( __( 'Texte du bouton principal', 'omhb' ), __( 'Adhérer au club', 'omhb' ) ),

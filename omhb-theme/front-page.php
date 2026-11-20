@@ -18,7 +18,6 @@ if ( $omhb_hero_image_id ) {
 	<div class="omhb-hero-fond"<?php echo $omhb_style_fond; // phpcs:ignore WordPress.Security.EscapeOutput ?>"></div>
 	<div class="omhb-conteneur">
 		<div class="omhb-hero-contenu">
-			<span class="omhb-hero-badge"><?php echo esc_html( get_theme_mod( 'omhb_hero_badge', __( 'Club de handball', 'omhb' ) ) ); ?></span>
 			<h1 class="omhb-hero-titre"><?php echo esc_html( get_theme_mod( 'omhb_hero_titre', __( 'La Passion du Hand depuis 1968', 'omhb' ) ) ); ?></h1>
 			<p class="omhb-hero-texte"><?php echo esc_html( get_theme_mod( 'omhb_hero_texte', __( 'BabyHand, jeunes, seniors, loisirs : le club de Mehun-sur-Yèvre accueille tous les passionnés de handball.', 'omhb' ) ) ); ?></p>
 			<div class="omhb-hero-actions">
