@@ -467,7 +467,30 @@ input[type="submit"]:hover {
   background: linear-gradient(120deg, var(--omhb-rouge), var(--omhb-rouge-fonce));
   color: var(--omhb-blanc);
   padding: 64px 0;
+  position: relative;
+  overflow: hidden;
 }
+
+/* Image mise en avant de la page/article, en fond du bandeau de titre */
+
+.omhb-page-entete-image { padding: 96px 0; }
+
+.omhb-page-fond {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+}
+
+.omhb-page-entete::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(94, 7, 10, 0.6) 30%, rgba(94, 7, 10, 0.15) 80%);
+}
+
+.omhb-page-entete .omhb-conteneur { position: relative; z-index: 2; }
 
 .omhb-page-entete h1 {
   margin: 0;

@@ -112,6 +112,15 @@ permaliens après création de chaque page.
 ⚠️ Les tarifs affichés datent de la saison 2024/2025 : mettez-les à jour pour
 2026/2027 avant la mise en ligne.
 
+📷 **Photo de bannière de chaque page** : dans l'éditeur d'une page, ouvrez le
+volet de droite (👉 icône ⚙️ ou onglet « Page ») > **Image mise en avant** >
+définir l'image. Elle s'affiche automatiquement en fond du grand bandeau rouge
+de titre (sous un voile sombre qui garantit la lisibilité du titre), et
+remplace l'image insérée dans le contenu. Idéal : photo paysage, ~1920×700 px,
+JPEG < 400 Ko. Sans image mise en avant, le bandeau reste en dégradé rouge.
+Même principe pour les articles (la photo s'affiche aussi en vignette dans les
+touchers listés).
+
 ## Étape 6 — Migrer les articles Joomla
 
 1. Installez et activez **FG Joomla to WordPress**.

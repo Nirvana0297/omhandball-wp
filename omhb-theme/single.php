@@ -6,22 +6,27 @@
  */
 
 get_header();
-?>
 
-<div class="omhb-page-entete">
-	<div class="omhb-conteneur">
-		<?php omhb_fil_ariane(); ?>
-		<h1><?php the_title(); ?></h1>
+while ( have_posts() ) :
+	the_post();
+
+	// Image mise en avant : utilisée en fond du bandeau de titre de l'article.
+	$omhb_fond_url = get_the_post_thumbnail_url( get_the_ID(), 'omhb-hero' );
+	?>
+
+	<div class="omhb-page-entete<?php echo $omhb_fond_url ? ' omhb-page-entete-image' : ''; ?>">
+		<?php if ( $omhb_fond_url ) : ?>
+			<div class="omhb-page-fond" style="background-image:url(<?php echo esc_url( $omhb_fond_url ); ?>);"></div>
+		<?php endif; ?>
+		<div class="omhb-conteneur">
+			<?php omhb_fil_ariane(); ?>
+			<h1><?php the_title(); ?></h1>
+		</div>
 	</div>
-</div>
 
-<div class="omhb-contenu-page">
-	<div class="omhb-conteneur">
-		<div class="omhb-contenu-colonne">
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
+	<div class="omhb-contenu-page">
+		<div class="omhb-conteneur">
+			<div class="omhb-contenu-colonne">
 				<p class="omhb-article-metas">
 					<?php
 					printf(
@@ -32,18 +37,16 @@ get_header();
 					);
 					?>
 				</p>
-				<?php if ( has_post_thumbnail() ) : ?>
-					<?php the_post_thumbnail( 'large', array( 'class' => 'omhb-image-mise-en-avant' ) ); ?>
-				<?php endif; ?>
 				<?php the_content(); ?>
 				<?php wp_link_pages(); ?>
 				<nav class="omhb-navigation-articles">
 					<div><?php previous_post_link( '%link', '← %title' ); ?></div>
 					<div><?php next_post_link( '%link', '%title →' ); ?></div>
 				</nav>
-			<?php endwhile; ?>
+			</div>
 		</div>
 	</div>
-</div>
+
+<?php endwhile; ?>
 
 <?php get_footer(); ?>
