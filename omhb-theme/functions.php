@@ -219,6 +219,71 @@ function omhb_sanitize_equipes_ffhb( $valeur ) {
 }
 
 /**
+ * Nettoie la liste « URLs des images de bannière » saisie dans le Customizer
+ * (une URL d'image par ligne).
+ *
+ * @param string $valeur Valeur brute.
+ * @return string Valeur nettoyée.
+ */
+function omhb_sanitize_bannieres_images( $valeur ) {
+	$omhb_lignes = explode( "\n", (string) $valeur );
+	$omhb_sortie = array();
+	foreach ( $omhb_lignes as $omhb_ligne ) {
+		$omhb_ligne = trim( $omhb_ligne );
+		if ( '' === $omhb_ligne ) {
+			continue;
+		}
+		$omhb_url = esc_url_raw( $omhb_ligne );
+		if ( $omhb_url ) {
+			$omhb_sortie[] = $omhb_url;
+		}
+	}
+	return implode( "\n", $omhb_sortie );
+}
+
+/**
+ * Retourne l'URL d'une image de fond aléatoire pour les bandeaux
+ * (sélection définie dans le Customizer, section « Bannières »).
+ *
+ * @return string URL de l'image, ou chaîne vide si l'option est désactivée
+ *                ou si aucune image n'est saisie.
+ */
+function omhb_banniere_aleatoire() {
+	static $omhb_cache = null;
+	if ( null !== $omhb_cache ) {
+		return $omhb_cache;
+	}
+	$omhb_cache = '';
+	if ( ! get_theme_mod( 'omhb_bannieres_aleatoires', false ) ) {
+		return $omhb_cache;
+	}
+	$omhb_brut = (string) get_theme_mod( 'omhb_bannieres_images', '' );
+	if ( '' === trim( $omhb_brut ) ) {
+		return $omhb_cache;
+	}
+	$omhb_urls = array_filter( array_map( 'trim', explode( "\n", $omhb_brut ) ) );
+	if ( empty( $omhb_urls ) ) {
+		return $omhb_cache;
+	}
+	$omhb_cache = esc_url_raw( $omhb_urls[ array_rand( $omhb_urls ) ] );
+	return $omhb_cache;
+}
+
+/**
+ * Bloque HTML pour le fond image aléatoire (à insérer juste après
+ * l'ouverture d'un bandeau .omhb-page-entete ou .omhb-hero).
+ *
+ * @return string HTML.
+ */
+function omhb_banniere_aleatoire_html() {
+	$omhb_url = omhb_banniere_aleatoire();
+	if ( ! $omhb_url ) {
+		return '';
+	}
+	return '<div class="omhb-page-fond" style="background-image:url(' . esc_url( $omhb_url ) . ');"></div>';
+}
+
+/**
  * Liste par défaut des équipes et de leurs pages FFHB (saison 2026-2027).
  *
  * @return string Lignes au format « Nom | URL ».

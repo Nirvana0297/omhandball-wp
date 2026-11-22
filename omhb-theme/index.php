@@ -8,7 +8,8 @@
 get_header();
 ?>
 
-<div class="omhb-page-entete">
+<div class="omhb-page-entete<?php echo omhb_banniere_aleatoire() ? ' omhb-page-entete-image' : ''; ?>">
+	<?php echo omhb_banniere_aleatoire_html(); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	<div class="omhb-conteneur">
 		<?php omhb_fil_ariane(); ?>
 		<h1>

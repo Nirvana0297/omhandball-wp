@@ -9,7 +9,10 @@ get_header();
 
 $omhb_hero_image_id = get_theme_mod( 'omhb_hero_image' );
 $omhb_style_fond    = '';
-if ( $omhb_hero_image_id ) {
+if ( omhb_banniere_aleatoire() ) {
+	// Fond aléatoire activé + sélection remplie : priorité sur l'image du Customizer.
+	$omhb_style_fond = ' style="background-image:url(' . esc_url( omhb_banniere_aleatoire() ) . ');"';
+} elseif ( $omhb_hero_image_id ) {
 	$omhb_style_fond = ' style="background-image:url(' . esc_url( wp_get_attachment_image_url( $omhb_hero_image_id, 'omhb-hero' ) ) . ');"';
 }
 ?>
