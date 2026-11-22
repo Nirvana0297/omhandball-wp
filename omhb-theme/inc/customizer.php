@@ -95,5 +95,34 @@ function omhb_personnaliser( $wp_customize ) {
 		'section'   => 'omhb_accueil',
 		'mime_type' => 'image',
 	) ) );
+
+	$wp_customize->add_section( 'omhb_bannieres', array(
+		'title'       => __( 'Bannières — fond aléatoire', 'omhb' ),
+		'description' => __( 'Affiche une image de fond différente (tirée au hasard dans votre sélection) sur la grande bannière de l\'accueil et sur le bandeau de chaque page. Astuce : Médiathèque → cliquez sur une image → « Copier l\'URL dans le presse-papier », puis collez-la ici (une URL par ligne). Utilisez des images larges (1920×900 env.) et horizontales.', 'omhb' ),
+		'priority'    => 26,
+	) );
+
+	$wp_customize->add_setting( 'omhb_bannieres_aleatoires', array(
+		'default'           => false,
+		'sanitize_callback' => 'wp_validate_boolean',
+	) );
+
+	$wp_customize->add_control( 'omhb_bannieres_aleatoires', array(
+		'label'   => __( 'Activer le fond aléatoire des bannières', 'omhb' ),
+		'section' => 'omhb_bannieres',
+		'type'    => 'checkbox',
+	) );
+
+	$wp_customize->add_setting( 'omhb_bannieres_images', array(
+		'default'           => '',
+		'sanitize_callback' => 'omhb_sanitize_bannieres_images',
+	) );
+
+	$wp_customize->add_control( 'omhb_bannieres_images', array(
+		'label'       => __( 'Sélection d\'images (une URL par ligne)', 'omhb' ),
+		'description' => __( 'Chaque visite (ou changement de page) affichera une de ces images au hasard en fond de bannière. Quand cette option est activée, elle remplace l\'image de fond de l\'accueil et les images mises en avant des pages.', 'omhb' ),
+		'section'     => 'omhb_bannieres',
+		'type'        => 'textarea',
+	) );
 }
 add_action( 'customize_register', 'omhb_personnaliser' );

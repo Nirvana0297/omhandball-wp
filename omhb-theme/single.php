@@ -11,7 +11,11 @@ while ( have_posts() ) :
 	the_post();
 
 	// Image mise en avant : utilisée en fond du bandeau de titre de l'article.
-	$omhb_fond_url = get_the_post_thumbnail_url( get_the_ID(), 'omhb-hero' );
+	// Si le fond aléatoire est activé (Customizer > Bannières), il est prioritaire.
+	$omhb_fond_url = omhb_banniere_aleatoire();
+	if ( ! $omhb_fond_url ) {
+		$omhb_fond_url = get_the_post_thumbnail_url( get_the_ID(), 'omhb-hero' );
+	}
 	?>
 
 	<div class="omhb-page-entete<?php echo $omhb_fond_url ? ' omhb-page-entete-image' : ''; ?>">

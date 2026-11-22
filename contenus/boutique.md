@@ -29,6 +29,12 @@ Vous préférez régler votre commande par chèque ou en espèces ? Remplissez l
 formulaire ci-dessous : le trésorier vous recontacte pour valider la commande
 et organiser la remise (au gymnase, à l'entraînement ou lors d'un match).
 
+> 📄 **Version PDF remplissable** : `boutique/bon-de-commande-boutique-omhb.pdf`
+> — bon de commande à compléter directement à l'ordinateur (listes
+> déroulantes Article / Couleur / Taille, 12 lignes, cases Liquide/Chèque)
+> ou à imprimer et remplir à la main. À télécharger depuis cette page (bloc
+> « Fichier » de la médiathèque) et/ou à afficher au gymnase.
+
 <!-- FORMULAIRE WPForms : à créer et insérer ici (bloc WPForms) -->
 
 ### Champs du formulaire (WPForms)

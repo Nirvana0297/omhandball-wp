@@ -73,9 +73,21 @@ Vérifications immédiates dans **Réglages** :
 3. **Page d'accueil** : image de fond de la bannière (photo d'équipe ou d'action),
    titre, texte, bouton, téléphone, e-mail, adresse, liens Facebook et Instagram
    (pré-remplis avec les coordonnées actuelles du club).
-4. **Menus** : créez un menu « Principal » avec Accueil, Le club, Équipes,
+4. **Bannières — fond aléatoire** : téléversez plusieurs photos du club dans la
+   Médiathèque (images larges et horizontales, 1920×900 environ), puis dans cette
+   section : cochez « Activer le fond aléatoire » et collez les URLs des images,
+   une par ligne (Médiathèque → cliquer sur une image → « Copier l'URL dans le
+   presse-papier »). Chaque page (accueil compris) affichera alors une photo
+   différente, tirée au hasard, en fond de bannière. Quand l'option est active,
+   elle remplace l'image de fond de l'accueil et les images mises en avant des
+   pages ; décochez pour revenir au comportement normal. ℹ️ Avec un plugin de
+   cache (LWS Optimize), la rotation se voit à chaque changement de page et après
+   chaque purge de cache.
+5. **Menus** : créez un menu « Principal » avec Accueil, Le club, Équipes,
    Adhésion, Calendrier, Sponsoring, Contact — affectez-le à l'emplacement
    « Menu principal ». Créez aussi un menu « Pied de page ».
+6. **Lecture** : « La page d'accueil affiche » > une page statique > Accueil.
+   Créez aussi une page vide « Actualités » et sélectionnez-la comme page des articles.
 5. **Lecture** : « La page d'accueil affiche » > une page statique > Accueil.
    Créez aussi une page vide « Actualités » et sélectionnez-la comme page des articles.
 
@@ -115,7 +127,10 @@ permaliens après création de chaque page.
 formulaire **WPForms** « Commande boutique (chèque/espèces) » avec les champs
 décrits dans `contenus/boutique.md` (articles + tailles + quantités, mode de
 paiement, message), puis insérez-le sur la page. Notifications vers
-5418002@cvl.ffhandball.net.
+5418002@cvl.ffhandball.net. Le dossier `boutique/` contient en plus un
+**PDF remplissable** (`bon-de-commande-boutique-omhb.pdf`) à téléverser dans
+la médiathèque et à proposer au téléchargement sur cette page (utile pour le
+téléchargement papier au gymnase).
 
 📷 **Photo de bannière de chaque page** : dans l'éditeur d'une page, ouvrez le
 volet de droite (👉 icône ⚙️ ou onglet « Page ») > **Image mise en avant** >
