@@ -115,7 +115,10 @@ permaliens après création de chaque page.
 formulaire **WPForms** « Commande boutique (chèque/espèces) » avec les champs
 décrits dans `contenus/boutique.md` (articles + tailles + quantités, mode de
 paiement, message), puis insérez-le sur la page. Notifications vers
-5418002@cvl.ffhandball.net.
+5418002@cvl.ffhandball.net. Le dossier `boutique/` contient en plus un
+**PDF remplissable** (`bon-de-commande-boutique-omhb.pdf`) à téléverser dans
+la médiathèque et à proposer au téléchargement sur cette page (utile pour le
+téléchargement papier au gymnase).
 
 📷 **Photo de bannière de chaque page** : dans l'éditeur d'une page, ouvrez le
 volet de droite (👉 icône ⚙️ ou onglet « Page ») > **Image mise en avant** >
