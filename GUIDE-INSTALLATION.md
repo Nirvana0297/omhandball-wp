@@ -84,7 +84,7 @@ Vérifications immédiates dans **Réglages** :
 | Plugin | Rôle |
 |---|---|
 | FG Joomla to WordPress | Migration des articles, catégories et images depuis Joomla |
-| WPForms Lite (ou Contact Form 7) | Formulaire de contact et pré-adhésion |
+| WPForms Lite (ou Contact Form 7) | Formulaire de contact, pré-adhésion et commande boutique (chèque/espèces) |
 | Rank Math SEO | Référencement, sitemap, balises |
 | UpdraftPlus | Sauvegardes automatiques (Google Drive ou autre) |
 | SportsPress (optionnel) | Calendriers et résultats si vous préférez les saisir dans WordPress |
@@ -105,12 +105,17 @@ dossier `contenus/` :
 | Calendrier & résultats | `contenus/calendrier.md` | `/calendrier/` |
 | Sponsoring | `contenus/sponsoring.md` | `/sponsoring/` |
 | Contact | `contenus/contact.md` | `/contact/` |
+| Boutique | `contenus/boutique.md` | `/boutique/` |
 
 ⚠️ Le thème utilise ces URLs pour ses boutons d'accès rapide : vérifiez les
 permaliens après création de chaque page.
 
-⚠️ Les tarifs affichés datent de la saison 2024/2025 : mettez-les à jour pour
-2026/2027 avant la mise en ligne.
+🛒 **Boutique HelloAsso (paiement manuel chèque/espèces)** : la page
+`/boutique/` renvoie vers la boutique HelloAsso du club. Créez aussi un
+formulaire **WPForms** « Commande boutique (chèque/espèces) » avec les champs
+décrits dans `contenus/boutique.md` (articles + tailles + quantités, mode de
+paiement, message), puis insérez-le sur la page. Notifications vers
+5418002@cvl.ffhandball.net.
 
 📷 **Photo de bannière de chaque page** : dans l'éditeur d'une page, ouvrez le
 volet de droite (👉 icône ⚙️ ou onglet « Page ») > **Image mise en avant** >
