@@ -90,6 +90,11 @@ if ( $omhb_hero_image_id ) {
 				<h2 class="omhb-acces-titre"><?php esc_html_e( 'Équipes & horaires', 'omhb' ); ?></h2>
 				<p><?php esc_html_e( 'Du BabyHand aux loisirs : retrouvez les catégories et les créneaux d\'entraînement.', 'omhb' ); ?></p>
 			</a>
+			<a class="omhb-acces-carte" href="<?php echo esc_url( home_url( '/boutique/' ) ); ?>">
+				<div class="omhb-acces-icone">🛍️</div>
+				<h2 class="omhb-acces-titre"><?php esc_html_e( 'Boutique du club', 'omhb' ); ?></h2>
+				<p><?php esc_html_e( 'Vêtements et accessoires aux couleurs du club : commande en ligne sur HelloAsso ou par chèque et espèces.', 'omhb' ); ?></p>
+			</a>
 			<a class="omhb-acces-carte" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 				<div class="omhb-acces-icone">📍</div>
 				<h2 class="omhb-acces-titre"><?php esc_html_e( 'Contacts & accès', 'omhb' ); ?></h2>
